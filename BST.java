@@ -14,25 +14,31 @@ public class BST{
 	}
 	
 	public Node add(int val, Node root){
-		if(root==null)
+		if(root==null){
 			root = new Node(val);
-		else if(root.data >= val)
+		}
+		else if(root.data >= val){
 			root.left = add(val,root.left);
-		else 
+		}
+		else{
 			root.right = add(val,root.right);
-		
+		}
 		return root; 
 	}
 	
 	public boolean search(int val, Node root){
-		if(root==null)
+		if(root==null){
 			return false;
-		else if(root.data==val)
+		}
+		else if(root.data==val){
 			return true;
-		else if(root.data>val)
+		}
+		else if(root.data>val){
 			return search(val,root.left);
-		else
+		}
+		else{
 			return search(val,root.right);
+		}
 	}
 	
 	public boolean search(int val){
@@ -40,8 +46,9 @@ public class BST{
 	}
 	
 	public void inorder(Node root){
-		if(root==null)
+		if(root==null){
 			return;
+		}
 		inorder(root.left);
 		System.out.print(root.data + " -- ");
 		inorder(root.right);
@@ -56,12 +63,11 @@ public class BST{
 	}
 	
 	public void clear(Node root){
-		if(root == null){
-			return ;
+		if(root != null){
+			clear(root.left);
+			clear(root.right);
+			root=null;
 		}
-		clear(root.left);
-		clear(root.right);
-		root=null;
 	}
 	
 	public List<Integer> getElements(){
@@ -84,8 +90,9 @@ public class BST{
 				root=s.pop();
 				root=root.right;
 			}
-			else //if(s.isEmpty()) ****
+			else{
 				return values;
+			}
 		}
 	}
 
