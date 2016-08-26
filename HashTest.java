@@ -6,13 +6,6 @@ public class HashTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		BST tree = new BST(10);
-//		tree.add(5);
-//		tree.add(15);
-//		tree.add(25);
-//		tree.add(0);
-//		tree.inorder();
-//		System.out.println(tree.search(0));		
 		
 		Hash h = new Hash();
 		h.put(2, 10);
